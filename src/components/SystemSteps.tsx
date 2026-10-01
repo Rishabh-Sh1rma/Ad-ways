@@ -69,6 +69,7 @@ export const SystemSteps: React.FC = () => {
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-contain rounded-xl"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
 

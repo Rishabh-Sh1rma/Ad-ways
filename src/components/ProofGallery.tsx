@@ -1,5 +1,5 @@
-import React from 'react';
-import { ZoomIn } from 'lucide-react';
+import React, { useRef, useState, useEffect } from 'react';
+import { ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react';
 import { CaseStudyItem } from '../types';
 
 interface ProofGalleryProps {
@@ -13,14 +13,6 @@ interface ClientWinItem {
   caption: string;
 }
 
-// Rearranged according to user instructions:
-// 1. Old Win #2 moved to Client Win #1
-// 2. Old Win #3 as Client Win #2
-// 3. Campaign Result #8 moved as Client Win #3
-// 4. Old Win #4 as Client Win #4
-// 5. Old Win #5 as Client Win #5
-// 6. Campaign Result #9 moved as Client Win #6
-// 7. Old Win #1 moved to Client Win #7
 const REORDERED_CLIENT_WINS: ClientWinItem[] = [
   {
     id: 'win-1',
@@ -81,6 +73,47 @@ const REMAINING_CAMPAIGN_RESULTS: string[] = [
 ];
 
 export const ProofGallery: React.FC<ProofGalleryProps> = ({ onSelectImage }) => {
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const updateScrollState = () => {
+    if (!sliderRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current;
+    setCanScrollLeft(scrollLeft > 10);
+    setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+
+    // Approximate active index based on scroll position
+    const cardWidth = 280; // approximate snap card step
+    const index = Math.min(
+      REMAINING_CAMPAIGN_RESULTS.length - 1,
+      Math.max(0, Math.round(scrollLeft / cardWidth))
+    );
+    setCurrentIndex(index);
+  };
+
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+    slider.addEventListener('scroll', updateScrollState, { passive: true });
+    updateScrollState();
+    return () => slider.removeEventListener('scroll', updateScrollState);
+  }, []);
+
+  const scrollByAmount = (direction: 'left' | 'right') => {
+    if (!sliderRef.current) return;
+    const cardWidth = sliderRef.current.clientWidth > 640 ? 320 : 260;
+    const amount = direction === 'left' ? -cardWidth : cardWidth;
+    sliderRef.current.scrollBy({ left: amount, behavior: 'smooth' });
+  };
+
+  const scrollToSlide = (index: number) => {
+    if (!sliderRef.current) return;
+    const cardWidth = sliderRef.current.clientWidth > 640 ? 320 : 260;
+    sliderRef.current.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
+  };
+
   return (
     <section id="case-studies" className="py-12 sm:py-20 px-3 sm:px-6 max-w-[1200px] mx-auto">
       {/* Section Header */}
@@ -91,7 +124,7 @@ export const ProofGallery: React.FC<ProofGalleryProps> = ({ onSelectImage }) => 
       </div>
 
       {/* SECTION 1: CLIENT WINS */}
-      <div className="mb-14">
+      <div className="mb-14 sm:mb-16">
         <div className="flex items-center gap-2 mb-4 pb-2 border-b border-gray-200">
           <span className="w-2.5 h-2.5 rounded-full bg-green-500" />
           <h3 className="text-xl sm:text-2xl font-bold text-[#0A0A0A] tracking-tight">
@@ -99,9 +132,9 @@ export const ProofGallery: React.FC<ProofGalleryProps> = ({ onSelectImage }) => 
           </h3>
         </div>
 
-        {/* Compact Mobile-Friendly Grid with less space */}
+        {/* Compact Mobile-Friendly Grid with tight spacing & lazy images */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-          {REORDERED_CLIENT_WINS.map((win) => (
+          {REORDERED_CLIENT_WINS.map((win, index) => (
             <div
               key={win.id}
               onClick={() =>
@@ -122,7 +155,8 @@ export const ProofGallery: React.FC<ProofGalleryProps> = ({ onSelectImage }) => 
                   alt={`Client Win #${win.winNumber}`}
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-102"
-                  loading="lazy"
+                  loading={index < 2 ? 'eager' : 'lazy'}
+                  decoding="async"
                 />
                 <div className="absolute top-2 left-2 bg-black/75 backdrop-blur-xs text-white text-[11px] font-mono px-2 py-0.5 rounded-md">
                   Client Win #{win.winNumber}
@@ -142,17 +176,63 @@ export const ProofGallery: React.FC<ProofGalleryProps> = ({ onSelectImage }) => 
         </div>
       </div>
 
-      {/* SECTION 2: CAMPAIGN RESULTS */}
+      {/* SECTION 2: CAMPAIGN RESULTS (MOBILE-FIRST 9:16 SLIDER) */}
       <div>
-        <div className="flex items-center gap-2 mb-4 pb-2 border-b border-gray-200">
-          <span className="w-2.5 h-2.5 rounded-full bg-purple-600" />
-          <h3 className="text-xl sm:text-2xl font-bold text-[#0A0A0A] tracking-tight">
-            Campaign Results
-          </h3>
+        <div className="flex items-center justify-between gap-4 mb-4 pb-2 border-b border-gray-200">
+          <div className="flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-purple-600" />
+            <h3 className="text-xl sm:text-2xl font-bold text-[#0A0A0A] tracking-tight">
+              Campaign Results
+            </h3>
+            <span className="text-xs font-mono text-gray-500 hidden sm:inline ml-2">
+              (9:16 Proof Gallery)
+            </span>
+          </div>
+
+          {/* Navigation Controls: Slide counter & Back/Front buttons */}
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-mono text-gray-500 mr-1 select-none">
+              {currentIndex + 1} / {REMAINING_CAMPAIGN_RESULTS.length}
+            </span>
+            <button
+              onClick={() => scrollByAmount('left')}
+              disabled={!canScrollLeft}
+              aria-label="Previous Campaign Result"
+              className={`w-9 h-9 rounded-full flex items-center justify-center border transition-all duration-200 ${
+                canScrollLeft
+                  ? 'bg-white border-gray-300 text-gray-900 hover:bg-gray-100 shadow-xs cursor-pointer active:scale-95'
+                  : 'bg-gray-100 border-gray-200 text-gray-300 cursor-not-allowed'
+              }`}
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => scrollByAmount('right')}
+              disabled={!canScrollRight}
+              aria-label="Next Campaign Result"
+              className={`w-9 h-9 rounded-full flex items-center justify-center border transition-all duration-200 ${
+                canScrollRight
+                  ? 'bg-white border-gray-300 text-gray-900 hover:bg-gray-100 shadow-xs cursor-pointer active:scale-95'
+                  : 'bg-gray-100 border-gray-200 text-gray-300 cursor-not-allowed'
+              }`}
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
-        {/* Tight grid with NO descriptions */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-3.5">
+        {/* Swipe prompt on mobile */}
+        <div className="flex items-center justify-between text-[11px] text-gray-400 mb-2 sm:hidden px-1">
+          <span>Swipe horizontally or use arrows to view proofs</span>
+          <span>9:16 Format</span>
+        </div>
+
+        {/* 9:16 Smooth Horizontal Slider with touch snap */}
+        <div
+          ref={sliderRef}
+          className="flex gap-3 sm:gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar pb-3 pt-1 px-1 -mx-1"
+          style={{ WebkitOverflowScrolling: 'touch' }}
+        >
           {REMAINING_CAMPAIGN_RESULTS.map((url, idx) => (
             <div
               key={idx}
@@ -166,22 +246,47 @@ export const ProofGallery: React.FC<ProofGalleryProps> = ({ onSelectImage }) => 
                   caption: 'Direct campaign screenshot and analytics proof.',
                 })
               }
-              className="group cursor-pointer bg-white rounded-xl sm:rounded-2xl border border-gray-200 p-1.5 sm:p-2 shadow-xs hover:shadow-md transition-all duration-200"
+              className="w-[240px] sm:w-[280px] md:w-[310px] shrink-0 snap-start group cursor-pointer bg-white rounded-2xl sm:rounded-[26px] border border-gray-200 p-2 shadow-sm hover:shadow-lg transition-all duration-200"
             >
-              <div className="relative overflow-hidden rounded-lg sm:rounded-xl bg-gray-50 aspect-[4/3] flex items-center justify-center border border-gray-100">
+              {/* 9:16 vertical aspect ratio container */}
+              <div className="relative overflow-hidden rounded-xl sm:rounded-[20px] bg-neutral-950 aspect-[9/16] flex items-center justify-center border border-gray-100">
                 <img
                   src={url}
                   alt={`Campaign Result ${idx + 1}`}
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-102"
-                  loading="lazy"
+                  className="w-full h-full object-cover sm:object-contain bg-neutral-950 transition-transform duration-300 group-hover:scale-[1.02]"
+                  loading={idx < 2 ? 'eager' : 'lazy'}
+                  decoding="async"
                 />
-                <div className="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1 text-white text-[11px] font-medium">
-                  <ZoomIn className="w-3.5 h-3.5" />
-                  <span>Inspect</span>
+
+                {/* Badge at top */}
+                <div className="absolute top-2.5 left-2.5 bg-black/80 backdrop-blur-xs text-white text-[11px] font-mono px-2.5 py-0.5 rounded-full z-10 border border-white/10">
+                  Result #{idx + 1}
+                </div>
+
+                {/* Hover / Tap inspect prompt */}
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1.5 text-white text-xs font-medium backdrop-blur-xs">
+                  <ZoomIn className="w-4 h-4" />
+                  <span>Inspect Full Proof</span>
                 </div>
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* Interactive slide indicator dots */}
+        <div className="flex items-center justify-center gap-1.5 mt-4">
+          {REMAINING_CAMPAIGN_RESULTS.map((_, dotIdx) => (
+            <button
+              key={dotIdx}
+              onClick={() => scrollToSlide(dotIdx)}
+              aria-label={`Go to result ${dotIdx + 1}`}
+              className={`h-1.5 rounded-full transition-all duration-200 cursor-pointer ${
+                dotIdx === currentIndex
+                  ? 'w-6 bg-[#0A0A0A]'
+                  : 'w-1.5 bg-gray-300 hover:bg-gray-400'
+              }`}
+            />
           ))}
         </div>
       </div>

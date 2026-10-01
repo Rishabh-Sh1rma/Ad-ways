@@ -40,6 +40,7 @@ export const CalendlySection: React.FC = () => {
           <iframe
             src="https://calendly.com/rishabhar1974/30min?hide_landing_page_details=1&hide_gdpr_banner=1"
             title="Book a 30-minute consultation with Rishabh Sharma"
+            loading="lazy"
             className="w-full h-full border-0 absolute inset-0"
             style={{ width: '100%', height: '100%', minHeight: '700px' }}
           />
