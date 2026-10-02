@@ -5,7 +5,7 @@ import { ProofGallery } from './components/ProofGallery';
 import { ImageModal } from './components/ImageModal';
 import { QualificationSection } from './components/QualificationSection';
 import { SystemSteps } from './components/SystemSteps';
-import { CalendlySection } from './components/CalendlySection';
+import { BookingSection } from './components/BookingSection';
 import { Footer } from './components/Footer';
 import { CaseStudyItem } from './types';
 
@@ -80,25 +80,6 @@ export default function App() {
             </span>
           </div>
         </div>
-
-        {/* Quick SEO Internal Anchor Links */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs sm:text-sm font-medium text-gray-500">
-          <a href="#case-studies" className="hover:text-black transition-colors underline-offset-4 hover:underline">
-            Verified Client Case Studies
-          </a>
-          <span className="text-gray-300">·</span>
-          <a href="#system" className="hover:text-black transition-colors underline-offset-4 hover:underline">
-            4-Step Paid Ads Scaling System
-          </a>
-          <span className="text-gray-300">·</span>
-          <a href="#qualification" className="hover:text-black transition-colors underline-offset-4 hover:underline">
-            Partner Qualification Criteria
-          </a>
-          <span className="text-gray-300">·</span>
-          <a href="#calendly" className="hover:text-black transition-colors underline-offset-4 hover:underline">
-            Schedule 1-on-1 Growth Audit
-          </a>
-        </div>
       </section>
 
       {/* REAL RESULTS ONCE THE SYSTEM GOES LIVE (Client Wins & Campaign Results) */}
@@ -110,8 +91,8 @@ export default function App() {
       {/* SIDE-BY-SIDE QUALIFICATION (This Is For You If vs NOT For You If) */}
       <QualificationSection />
 
-      {/* CALENDLY EMBED SECTION */}
-      <CalendlySection />
+      {/* CAL EMBED SECTION (Replaced Calendly) */}
+      <BookingSection />
 
       {/* FOOTER (Only Logo & Copyright line) */}
       <Footer />

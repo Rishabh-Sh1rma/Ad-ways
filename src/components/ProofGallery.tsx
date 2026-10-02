@@ -80,6 +80,24 @@ const REORDERED_CLIENT_WINS: ClientWinItem[] = [
     headline: 'Closed $2,500 deal in first 7 days of campaign',
     caption: 'closed a 2500$ deal in first 7 days of running campaign.',
   },
+  {
+    id: 'win-8',
+    winNumber: 8,
+    imageUrl: '/images/win-8.webp',
+    badge: 'Quality Leads',
+    metric: '$3,500 Deal Closed',
+    headline: 'Generated big win for Josh closing deal worth $3,500',
+    caption: 'generated big win for Josh closing deal worth 3500$',
+  },
+  {
+    id: 'win-9',
+    winNumber: 9,
+    imageUrl: '/images/win-9.webp',
+    badge: 'Revenue Scaling',
+    metric: '5x Revenue in 6 Mo',
+    headline: 'Helped Gavin almost 5x his revenue in span of 6 months',
+    caption: 'Helped Gavin almost 5x his revenue in span of 6 months.',
+  },
 ];
 
 const REMAINING_CAMPAIGN_RESULTS: string[] = [
@@ -163,7 +181,7 @@ export const ProofGallery: React.FC<ProofGalleryProps> = ({ onSelectImage }) => 
             </h3>
           </div>
           <span className="text-xs font-mono font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
-            7 Verified Results
+            9 Verified Results
           </span>
         </div>
 

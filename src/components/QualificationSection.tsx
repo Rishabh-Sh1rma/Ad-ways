@@ -2,7 +2,7 @@ import React from 'react';
 import { Check, X } from 'lucide-react';
 
 const FOR_YOU_POINTS = [
-  "You're an agency owner, coach, or B2B business selling services over Rs.50,000/month.",
+  "You're an agency owner, B2B business selling services over 1000$",
   "You already have clients, case studies, and proof that your service works",
   "You're tired of relying on referrals, word-of-mouth, and inconsistent lead flow",
   "You want 3-5 qualified sales calls every week without cold outreach and burnout.",
