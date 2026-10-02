@@ -30,10 +30,11 @@ export default function App() {
         {/* Centered Decent Size Logo above Attention Badge */}
         <div className="flex justify-center mb-6">
           <img
-            src="https://i.ibb.co/0yBPKq0Q/adways-logo-variation-01-geometric-interlock.png"
-            alt="Ad-ways"
-            referrerPolicy="no-referrer"
+            src="/images/adways-logo.webp"
+            alt="Ad-ways Paid Advertising Agency"
             className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
+            width="64"
+            height="64"
           />
         </div>
 
@@ -78,6 +79,25 @@ export default function App() {
               Only 3 spots open for this month
             </span>
           </div>
+        </div>
+
+        {/* Quick SEO Internal Anchor Links */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs sm:text-sm font-medium text-gray-500">
+          <a href="#case-studies" className="hover:text-black transition-colors underline-offset-4 hover:underline">
+            Verified Client Case Studies
+          </a>
+          <span className="text-gray-300">·</span>
+          <a href="#system" className="hover:text-black transition-colors underline-offset-4 hover:underline">
+            4-Step Paid Ads Scaling System
+          </a>
+          <span className="text-gray-300">·</span>
+          <a href="#qualification" className="hover:text-black transition-colors underline-offset-4 hover:underline">
+            Partner Qualification Criteria
+          </a>
+          <span className="text-gray-300">·</span>
+          <a href="#calendly" className="hover:text-black transition-colors underline-offset-4 hover:underline">
+            Schedule 1-on-1 Growth Audit
+          </a>
         </div>
       </section>
 

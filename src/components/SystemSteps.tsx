@@ -14,7 +14,7 @@ const STEPS_DATA: StepItem[] = [
     headline: 'We Make Your Offer Impossible to Ignore',
     description:
       'We turn what you already sell into a clear, outcome-focused offer built for cold traffic so the right prospect immediately understands what you do, who it\'s for, and why they should care.',
-    image: 'https://i.ibb.co/RkSxRP7K/adways-step-01-exact-offer-gradient.png',
+    image: '/images/step-01.webp',
     youGet: 'Specific audience → Clear problem → Desired outcome → Strong promise',
   },
   {
@@ -22,7 +22,7 @@ const STEPS_DATA: StepItem[] = [
     headline: 'We Make Your Ads Speak Directly to Your Buyer',
     description:
       'Your prospects should feel like the ad was written specifically for them. We build messaging around their problems, desires, objections, and language so the right people stop scrolling and pay attention.',
-    image: 'https://i.ibb.co/Tqv91Gxv/adways-step-02-exact-leads-gradient.png',
+    image: '/images/step-02.webp',
     youGet: 'Right audience → Right pain point → Right message → More qualified leads',
   },
   {
@@ -30,7 +30,7 @@ const STEPS_DATA: StepItem[] = [
     headline: 'We Turn Attention Into Qualified Appointments',
     description:
       'Getting someone to click is only the beginning. We build the right funnel to educate, build trust, qualify prospects, and move them toward a sales conversation.',
-    image: 'https://i.ibb.co/vCMSmZXw/adways-step-03-exact-calls-gradient.png',
+    image: '/images/step-03.webp',
     youGet: 'Ad → Landing Page → VSL/Content → Qualification → Booked Call',
   },
   {
@@ -38,7 +38,7 @@ const STEPS_DATA: StepItem[] = [
     headline: 'We Turn Your Leads Into Paying Clients',
     description:
       'More booked calls mean nothing if they don\'t convert. We build the pre-call follow-up, qualification, and sales process needed to turn cold prospects into serious buying opportunities.',
-    image: 'https://i.ibb.co/Fk8WTX0g/adways-step-04-exact-convert-gradient.png',
+    image: '/images/step-04.webp',
     youGet: 'Pre-call nurturing → Qualification → Sales process → Client conversion',
   },
 ];
