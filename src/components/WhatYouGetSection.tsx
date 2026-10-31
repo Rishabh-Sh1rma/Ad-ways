@@ -444,42 +444,42 @@ export const WhatYouGetSection: React.FC = () => {
       </div>
 
       {/* FEATURE ITEM 9: Lead Qualification System */}
-      <div className="bg-gradient-to-br from-neutral-900 to-neutral-950 text-white rounded-[28px] sm:rounded-[36px] p-6 sm:p-8 shadow-xl mb-8 sm:mb-12 border border-neutral-800">
+      <div className="bg-white rounded-[28px] sm:rounded-[36px] border border-gray-200/90 p-5 sm:p-8 shadow-md mb-8 sm:mb-12">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
           <div className="flex items-center gap-3">
-            <span className="w-10 h-10 rounded-xl bg-purple-600/30 text-purple-300 flex items-center justify-center font-mono font-bold text-sm border border-purple-500/30">
+            <span className="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 border border-purple-100 badge-purple flex items-center justify-center font-mono font-bold text-sm">
               09
             </span>
             <div>
-              <span className="text-xs font-mono uppercase text-green-400 tracking-wider font-semibold">
+              <span className="text-xs font-mono uppercase text-green-700 tracking-wider font-semibold bg-green-50 border border-green-200 badge-green px-2.5 py-0.5 rounded-full inline-block mb-1">
                 Tire-Kicker Protection
               </span>
-              <h3 className="text-xl sm:text-2xl font-bold tracking-tight">
+              <h3 className="text-xl sm:text-2xl font-bold text-[#0A0A0A] tracking-tight">
                 Complete Lead Qualification System
               </h3>
             </div>
           </div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-950/80 border border-green-500/40 text-xs font-medium text-green-300">
-            <ShieldCheck className="w-3.5 h-3.5 text-green-400" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 border border-green-200 text-xs font-semibold text-green-700 badge-green self-start sm:self-auto">
+            <ShieldCheck className="w-4 h-4 text-green-600" />
             <span>High Quality Calls Only</span>
           </div>
         </div>
 
-        <p className="text-sm sm:text-base text-gray-300 max-w-3xl leading-relaxed">
+        <p className="text-sm sm:text-base text-gray-600 max-w-3xl leading-relaxed">
           We filter leads before they reach your schedule. Custom questionnaires, budget validation, and service fit criteria ensure only genuine decision-makers get booked directly into your calendar.
         </p>
 
-        <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-neutral-800 text-xs text-gray-300">
+        <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-gray-100 text-xs sm:text-sm text-gray-700 font-medium">
           <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-green-400 shrink-0" />
+            <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
             <span>Revenue & budget verification</span>
           </div>
           <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-green-400 shrink-0" />
+            <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
             <span>Automated disqualification rules</span>
           </div>
           <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-green-400 shrink-0" />
+            <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
             <span>Direct calendar sync</span>
           </div>
         </div>

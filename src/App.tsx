@@ -40,9 +40,9 @@ export default function App() {
         </div>
 
         {/* Attention Badge */}
-        <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full px-3.5 py-1 sm:px-5 sm:py-1.5 mb-3.5 sm:mb-6 bg-gradient-to-r from-purple-700 to-indigo-600 text-white shadow-sm shadow-purple-600/20">
+        <div className="hero-attention-badge inline-flex items-center gap-1.5 sm:gap-2 rounded-full px-3.5 py-1 sm:px-5 sm:py-1.5 mb-3.5 sm:mb-6 shadow-sm shadow-purple-600/20">
           <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white animate-pulse" />
-          <span className="text-[11px] sm:text-sm font-semibold tracking-wide">
+          <span className="text-[11px] sm:text-sm font-semibold tracking-wide text-white">
             B2B Companies & Agency Owners...
           </span>
         </div>
