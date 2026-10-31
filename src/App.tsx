@@ -5,6 +5,7 @@ import { ProofGallery } from './components/ProofGallery';
 import { ImageModal } from './components/ImageModal';
 import { QualificationSection } from './components/QualificationSection';
 import { SystemSteps } from './components/SystemSteps';
+import { WhatYouGetSection } from './components/WhatYouGetSection';
 import { BookingSection } from './components/BookingSection';
 import { Footer } from './components/Footer';
 import { CaseStudyItem } from './types';
@@ -87,6 +88,9 @@ export default function App() {
 
       {/* THE 4-STEP SYSTEM */}
       <SystemSteps />
+
+      {/* WHAT YOU GET WHEN YOU WORK WITH US */}
+      <WhatYouGetSection />
 
       {/* SIDE-BY-SIDE QUALIFICATION (This Is For You If vs NOT For You If) */}
       <QualificationSection />
