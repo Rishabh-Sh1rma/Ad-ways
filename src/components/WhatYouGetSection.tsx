@@ -85,7 +85,7 @@ export const WhatYouGetSection: React.FC = () => {
     <section id="what-you-get" className="py-12 sm:py-20 px-3 sm:px-6 max-w-[1200px] mx-auto scroll-mt-10">
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
-        <div className="inline-flex items-center gap-2 rounded-full border border-purple-200 bg-purple-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-purple-700 shadow-xs mb-3">
+        <div className="inline-flex items-center gap-2 rounded-full border border-purple-200 bg-purple-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-purple-700 badge-purple shadow-xs mb-3">
           <Sparkles className="w-3.5 h-3.5 text-purple-600 animate-pulse" />
           <span>Complete Done-For-You Deliverables</span>
         </div>
@@ -103,7 +103,7 @@ export const WhatYouGetSection: React.FC = () => {
         <div className="bg-white rounded-[24px] border border-gray-200/90 p-5 sm:p-6 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
           <div>
             <div className="flex items-center justify-between mb-4">
-              <span className="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center font-mono font-bold text-sm border border-purple-100">
+              <span className="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 border border-purple-100 badge-purple flex items-center justify-center font-mono font-bold text-sm">
                 01
               </span>
               <Rocket className="w-5 h-5 text-gray-400 group-hover:text-purple-600 transition-colors" />
@@ -125,7 +125,7 @@ export const WhatYouGetSection: React.FC = () => {
         <div className="bg-white rounded-[24px] border border-gray-200/90 p-5 sm:p-6 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
           <div>
             <div className="flex items-center justify-between mb-4">
-              <span className="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center font-mono font-bold text-sm border border-purple-100">
+              <span className="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 border border-purple-100 badge-purple flex items-center justify-center font-mono font-bold text-sm">
                 02
               </span>
               <Layers className="w-5 h-5 text-gray-400 group-hover:text-purple-600 transition-colors" />
@@ -147,7 +147,7 @@ export const WhatYouGetSection: React.FC = () => {
         <div className="bg-white rounded-[24px] border border-gray-200/90 p-5 sm:p-6 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
           <div>
             <div className="flex items-center justify-between mb-4">
-              <span className="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center font-mono font-bold text-sm border border-purple-100">
+              <span className="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 border border-purple-100 badge-purple flex items-center justify-center font-mono font-bold text-sm">
                 03
               </span>
               <Database className="w-5 h-5 text-gray-400 group-hover:text-purple-600 transition-colors" />
@@ -156,7 +156,7 @@ export const WhatYouGetSection: React.FC = () => {
               <h3 className="text-base sm:text-lg font-bold text-[#0A0A0A] leading-snug">
                 Free High-End CRM
               </h3>
-              <span className="text-[10px] font-mono font-bold bg-green-50 text-green-700 border border-green-200 px-1.5 py-0.5 rounded-sm">
+              <span className="text-[10px] font-mono font-bold bg-green-50 text-green-700 border border-green-200 badge-green px-1.5 py-0.5 rounded-sm">
                 $100 Value
               </span>
             </div>
@@ -174,7 +174,7 @@ export const WhatYouGetSection: React.FC = () => {
         <div className="bg-white rounded-[24px] border border-gray-200/90 p-5 sm:p-6 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
           <div>
             <div className="flex items-center justify-between mb-4">
-              <span className="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center font-mono font-bold text-sm border border-purple-100">
+              <span className="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 border border-purple-100 badge-purple flex items-center justify-center font-mono font-bold text-sm">
                 04
               </span>
               <MessageSquare className="w-5 h-5 text-gray-400 group-hover:text-purple-600 transition-colors" />
@@ -198,10 +198,10 @@ export const WhatYouGetSection: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 pb-4 border-b border-gray-100">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 text-xs font-mono font-bold border border-purple-100">
+              <span className="px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 border border-purple-100 badge-purple text-xs font-mono font-bold">
                 05 · Video Ads Production
               </span>
-              <span className="text-xs text-green-700 font-semibold bg-green-50 px-2 py-0.5 rounded-full border border-green-200">
+              <span className="text-xs text-green-700 font-semibold bg-green-50 border border-green-200 badge-green px-2 py-0.5 rounded-full">
                 9:16 Mobile Native
               </span>
             </div>
@@ -292,7 +292,7 @@ export const WhatYouGetSection: React.FC = () => {
         <div className="bg-white rounded-[24px] border border-gray-200/90 p-5 sm:p-7 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-4">
-              <span className="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center font-mono font-bold text-sm border border-purple-100">
+              <span className="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 border border-purple-100 badge-purple flex items-center justify-center font-mono font-bold text-sm">
                 06
               </span>
               <BarChart3 className="w-5 h-5 text-gray-400" />
@@ -315,7 +315,7 @@ export const WhatYouGetSection: React.FC = () => {
         <div className="bg-white rounded-[24px] border border-gray-200/90 p-5 sm:p-7 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-4">
-              <span className="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center font-mono font-bold text-sm border border-purple-100">
+              <span className="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 border border-purple-100 badge-purple flex items-center justify-center font-mono font-bold text-sm">
                 07
               </span>
               <Palette className="w-5 h-5 text-gray-400" />
@@ -324,7 +324,7 @@ export const WhatYouGetSection: React.FC = () => {
               <h3 className="text-xl font-bold text-[#0A0A0A]">
                 Free Image Ads – Unlimited from Lead Designer
               </h3>
-              <span className="text-[10px] font-mono font-bold bg-purple-50 text-purple-700 border border-purple-200 px-1.5 py-0.5 rounded-sm">
+              <span className="text-[10px] font-mono font-bold bg-purple-50 text-purple-700 border border-purple-200 badge-purple px-1.5 py-0.5 rounded-sm">
                 Unlimited
               </span>
             </div>
@@ -344,7 +344,7 @@ export const WhatYouGetSection: React.FC = () => {
       <div className="bg-white rounded-[28px] sm:rounded-[36px] border border-gray-200/90 p-5 sm:p-8 shadow-md mb-8 sm:mb-12">
         <div className="flex items-center justify-between gap-3 mb-4">
           <div className="flex items-center gap-2">
-            <span className="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center font-mono font-bold text-sm border border-purple-100">
+            <span className="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 border border-purple-100 badge-purple flex items-center justify-center font-mono font-bold text-sm">
               08
             </span>
             <div>
@@ -363,12 +363,10 @@ export const WhatYouGetSection: React.FC = () => {
           A bespoke landing page with compelling copy, fast load speeds, and seamless calendar integrations. Check live examples built by our team:
         </p>
 
-        {/* 3 Live Landing Page Link Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+        {/* 4 Live Landing Page Link Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           <a
             href="https://cintra.run/ecom"
-            target="_blank"
-            rel="noopener noreferrer"
             className="group flex flex-col justify-between p-4 rounded-2xl bg-neutral-50 hover:bg-white border border-gray-200 hover:border-purple-300 transition-all hover:shadow-md"
           >
             <div>
@@ -388,8 +386,6 @@ export const WhatYouGetSection: React.FC = () => {
 
           <a
             href="https://funnels.cintra.run/offer"
-            target="_blank"
-            rel="noopener noreferrer"
             className="group flex flex-col justify-between p-4 rounded-2xl bg-neutral-50 hover:bg-white border border-gray-200 hover:border-purple-300 transition-all hover:shadow-md"
           >
             <div>
@@ -408,14 +404,31 @@ export const WhatYouGetSection: React.FC = () => {
           </a>
 
           <a
-            href="https://genial-designer-013595.framer.app/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="https://sites.leadconnectorhq.com/preview/5zsWPxvSH70fWsL8lhjM?notrack=true"
             className="group flex flex-col justify-between p-4 rounded-2xl bg-neutral-50 hover:bg-white border border-gray-200 hover:border-purple-300 transition-all hover:shadow-md"
           >
             <div>
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs font-mono font-semibold text-purple-700">Funnel Example 03</span>
+                <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-purple-600 transition-colors" />
+              </div>
+              <h4 className="text-sm font-bold text-[#0A0A0A] group-hover:text-purple-700 transition-colors truncate">
+                sites.leadconnectorhq...
+              </h4>
+              <p className="text-xs text-gray-500 mt-1">High-Converting Sales & Booking Funnel</p>
+            </div>
+            <span className="mt-3 text-xs font-semibold text-purple-600 group-hover:underline inline-flex items-center gap-1">
+              View live page →
+            </span>
+          </a>
+
+          <a
+            href="https://genial-designer-013595.framer.app/"
+            className="group flex flex-col justify-between p-4 rounded-2xl bg-neutral-50 hover:bg-white border border-gray-200 hover:border-purple-300 transition-all hover:shadow-md"
+          >
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs font-mono font-semibold text-purple-700">Funnel Example 04</span>
                 <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-purple-600 transition-colors" />
               </div>
               <h4 className="text-sm font-bold text-[#0A0A0A] group-hover:text-purple-700 transition-colors">

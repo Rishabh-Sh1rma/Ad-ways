@@ -262,14 +262,14 @@ export const ProofGallery: React.FC<ProofGalleryProps> = ({ onSelectImage }) => 
                 {/* Top Badge & Metric Bar */}
                 <div className="flex items-center justify-between gap-2 mb-3.5">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-mono font-bold text-gray-900 bg-gray-100 px-2.5 py-1 rounded-lg">
+                    <span className="text-xs font-mono font-bold text-gray-900 bg-gray-100 border border-gray-200 badge-gray px-2.5 py-1 rounded-lg">
                       Win #{win.winNumber}
                     </span>
-                    <span className="text-[11px] font-semibold text-purple-700 bg-purple-50 border border-purple-100 px-2 py-0.5 rounded-md">
+                    <span className="text-[11px] font-semibold text-purple-700 bg-purple-50 border border-purple-100 badge-purple px-2 py-0.5 rounded-md">
                       {win.badge}
                     </span>
                   </div>
-                  <span className="text-xs font-mono font-bold text-green-700 bg-green-50 border border-green-200/70 px-2.5 py-1 rounded-full">
+                  <span className="text-xs font-mono font-bold text-green-700 bg-green-50 border border-green-200/70 badge-green px-2.5 py-1 rounded-full">
                     {win.metric}
                   </span>
                 </div>
