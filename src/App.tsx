@@ -23,25 +23,25 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#FCFCFC] text-[#0A0A0A] font-sans selection:bg-gray-200 relative overflow-x-hidden">
       {/* HERO SECTION */}
-      <section className="relative pt-12 sm:pt-16 pb-12 sm:pb-16 px-4 sm:px-6 md:px-8 max-w-[1100px] mx-auto text-center">
+      <section className="relative pt-5 sm:pt-14 pb-10 sm:pb-16 px-4 sm:px-6 md:px-8 max-w-[1100px] mx-auto text-center">
         {/* Soft Radial Ambient Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[700px] aspect-square ambient-glow rounded-full blur-[90px] pointer-events-none -z-10" />
 
-        {/* Centered Decent Size Logo above Attention Badge */}
-        <div className="flex justify-center mb-6">
+        {/* Centered Precise Logo */}
+        <div className="flex justify-center mb-2.5 sm:mb-4">
           <img
             src="/images/adways-logo.webp"
             alt="Ad-ways Paid Advertising Agency"
-            className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
-            width="64"
-            height="64"
+            className="w-10 h-10 sm:w-14 sm:h-14 object-contain drop-shadow-xs"
+            width="56"
+            height="56"
           />
         </div>
 
         {/* Attention Badge */}
-        <div className="inline-flex items-center gap-2 rounded-full px-4 sm:px-5 py-1.5 sm:py-2 mb-6 bg-gradient-to-r from-purple-700 to-indigo-600 text-white shadow-md shadow-purple-600/20">
-          <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-          <span className="text-xs sm:text-sm font-semibold tracking-wide">
+        <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full px-3.5 py-1 sm:px-5 sm:py-1.5 mb-3.5 sm:mb-6 bg-gradient-to-r from-purple-700 to-indigo-600 text-white shadow-sm shadow-purple-600/20">
+          <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white animate-pulse" />
+          <span className="text-[11px] sm:text-sm font-semibold tracking-wide">
             B2B Companies & Agency Owners...
           </span>
         </div>

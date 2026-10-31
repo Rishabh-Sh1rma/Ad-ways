@@ -10,6 +10,7 @@ interface ClientWinItem {
   id: string;
   winNumber: number;
   imageUrl: string;
+  images?: string[];
   badge: string;
   metric: string;
   headline: string;
@@ -47,6 +48,60 @@ const REORDERED_CLIENT_WINS: ClientWinItem[] = [
   {
     id: 'win-4',
     winNumber: 4,
+    imageUrl: '/images/meta-win-3-1.webp',
+    badge: 'Meta Ads Manager',
+    metric: '371 Leads · $5.36 CPL',
+    headline: 'Client account meta ads: 371 qualified leads generated',
+    caption: 'client account meta ads.',
+  },
+  {
+    id: 'win-5',
+    winNumber: 5,
+    imageUrl: '/images/meta-win-3-2.webp',
+    badge: 'Lead Acquisition',
+    metric: '41 Leads · $3.38 CPL',
+    headline: 'Client account meta ads: $3.38 cost-per-lead acquisition',
+    caption: 'client account meta ads.',
+  },
+  {
+    id: 'win-6',
+    winNumber: 6,
+    imageUrl: '/images/meta-win-3-3.webp',
+    badge: 'B2B Ads Scale',
+    metric: 'B2B CBO Campaign',
+    headline: 'Client account meta ads: B2B campaign scaling',
+    caption: 'client account meta ads.',
+  },
+  {
+    id: 'win-7',
+    winNumber: 7,
+    imageUrl: '/images/meta-win-3-4.webp',
+    badge: 'Calendar Funnel',
+    metric: '23 Calls at $50/call',
+    headline: 'Client account meta ads: 23 booked appointments',
+    caption: 'client account meta ads.',
+  },
+  {
+    id: 'win-8',
+    winNumber: 8,
+    imageUrl: '/images/meta-win-3-5.webp',
+    badge: 'Pipeline Growth',
+    metric: '$230K Pipeline Value',
+    headline: 'Client account meta ads: $230K pipeline generated',
+    caption: 'client account meta ads.',
+  },
+  {
+    id: 'win-9',
+    winNumber: 9,
+    imageUrl: '/images/meta-win-3-composite.webp',
+    badge: 'Account Overview',
+    metric: 'Multi-Campaign Scale',
+    headline: 'Client account meta ads: Full campaign analytics',
+    caption: 'client account meta ads.',
+  },
+  {
+    id: 'win-10',
+    winNumber: 10,
     imageUrl: '/images/win-4.webp',
     badge: 'Client Retention',
     metric: '3 Deals Closed',
@@ -54,8 +109,8 @@ const REORDERED_CLIENT_WINS: ClientWinItem[] = [
     caption: '3 jobs closed for US client',
   },
   {
-    id: 'win-5',
-    winNumber: 5,
+    id: 'win-11',
+    winNumber: 11,
     imageUrl: '/images/win-5.webp',
     badge: 'Micro-Budget Win',
     metric: '$12 CPL · ~$2K Deal',
@@ -63,8 +118,8 @@ const REORDERED_CLIENT_WINS: ClientWinItem[] = [
     caption: '~2000$ client closed with 12$ CPL',
   },
   {
-    id: 'win-6',
-    winNumber: 6,
+    id: 'win-12',
+    winNumber: 12,
     imageUrl: '/images/win-6.webp',
     badge: 'Automation',
     metric: 'Automated Pipeline',
@@ -72,8 +127,8 @@ const REORDERED_CLIENT_WINS: ClientWinItem[] = [
     caption: 'Daily automated lead generation flow and calendar bookings.',
   },
   {
-    id: 'win-7',
-    winNumber: 7,
+    id: 'win-13',
+    winNumber: 13,
     imageUrl: '/images/win-7.webp',
     badge: 'Fast Velocity',
     metric: '$2,500 in 7 Days',
@@ -81,17 +136,17 @@ const REORDERED_CLIENT_WINS: ClientWinItem[] = [
     caption: 'closed a 2500$ deal in first 7 days of running campaign.',
   },
   {
-    id: 'win-8',
-    winNumber: 8,
+    id: 'win-14',
+    winNumber: 14,
     imageUrl: '/images/win-8.webp',
     badge: 'Quality Leads',
-    metric: '$3,500 Deal Closed',
-    headline: 'Generated big win for Josh closing deal worth $3,500',
-    caption: 'generated big win for Josh closing deal worth 3500$',
+    metric: '$35,000 Deal Closed',
+    headline: 'Generated big win for Josh closing deal worth $35,000',
+    caption: 'generated big win for Josh closing deal worth 35000$',
   },
   {
-    id: 'win-9',
-    winNumber: 9,
+    id: 'win-15',
+    winNumber: 15,
     imageUrl: '/images/win-9.webp',
     badge: 'Revenue Scaling',
     metric: '5x Revenue in 6 Mo',
@@ -181,7 +236,7 @@ export const ProofGallery: React.FC<ProofGalleryProps> = ({ onSelectImage }) => 
             </h3>
           </div>
           <span className="text-xs font-mono font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
-            9 Verified Results
+            15 Verified Results
           </span>
         </div>
 
@@ -197,6 +252,7 @@ export const ProofGallery: React.FC<ProofGalleryProps> = ({ onSelectImage }) => 
                   client: 'Verified Client',
                   category: 'revenue',
                   imageUrl: win.imageUrl,
+                  images: win.images,
                   caption: win.caption,
                 })
               }
@@ -218,15 +274,20 @@ export const ProofGallery: React.FC<ProofGalleryProps> = ({ onSelectImage }) => 
                   </span>
                 </div>
 
-                {/* Premium Image Frame */}
-                <div className="relative overflow-hidden rounded-[18px] bg-neutral-950 aspect-[16/11] flex items-center justify-center border border-gray-100 shadow-inner">
+                {/* Premium Image Frame - Designed to display the full screenshot without any cropping */}
+                <div className="relative overflow-hidden rounded-[18px] bg-neutral-950 min-h-[260px] sm:min-h-[290px] h-[300px] sm:h-[340px] flex items-center justify-center p-2 sm:p-2.5 border border-gray-100 shadow-inner">
                   <img
                     src={win.imageUrl}
                     alt={`Client Win #${win.winNumber}: ${win.caption}`}
-                    className="w-full h-full object-contain sm:object-cover bg-neutral-950 transition-transform duration-500 group-hover:scale-[1.03]"
+                    className="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
                     loading={index < 2 ? 'eager' : 'lazy'}
                     decoding="async"
                   />
+                  {win.images && win.images.length > 1 && (
+                    <div className="absolute top-2.5 right-2.5 bg-black/75 backdrop-blur-xs text-white text-[10px] font-mono px-2 py-0.5 rounded-md border border-white/10 z-10">
+                      {win.images.length} Proof Views
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white text-xs font-semibold backdrop-blur-xs">
                     <ZoomIn className="w-4 h-4" />
                     <span>Click to inspect full screenshot</span>

@@ -4,6 +4,7 @@ export interface CaseStudyItem {
   client: string;
   category: 'whatsapp' | 'revenue' | 'calendar' | 'cintra';
   imageUrl: string;
+  images?: string[];
   aspectRatio?: string;
   caption: string;
   highlightMetric?: string;
