@@ -93,7 +93,7 @@ export const WhatYouGetSection: React.FC = () => {
           What you get when you work with us
         </h2>
         <p className="mt-3 text-base sm:text-lg text-gray-600 font-medium max-w-2xl mx-auto leading-relaxed">
-          End-to-End client generation system. Onboard us and you don't have to lift a finger.
+          Complete done-for-you acquisition system. We build and manage your ads, funnels, and tracking so you can focus 100% on closing clients.
         </p>
       </div>
 

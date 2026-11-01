@@ -2,7 +2,7 @@ import React from 'react';
 import { Check, X } from 'lucide-react';
 
 const FOR_YOU_POINTS = [
-  "You're an agency owner, B2B business selling services over 1000$",
+  "You're an agency owner or B2B business selling high-ticket services ($1,000+).",
   "You already have clients, case studies, and proof that your service works",
   "You're tired of relying on referrals, word-of-mouth, and inconsistent lead flow",
   "You want 3-5 qualified sales calls every week without cold outreach and burnout.",
@@ -13,7 +13,7 @@ const FOR_YOU_POINTS = [
 const NOT_FOR_YOU_POINTS = [
   "You're still trying to figure out what service or offer to sell",
   "You have no client results, testimonials, or proof of work",
-  "You're looking for a done-for-you agency that does everything for you",
+  "You expect to be completely passive and won't show up to lead calls or close your own deals",
   "You're unwilling to invest in paid acquisition and growth",
   "You expect results without showing up to calls and implementing decisions",
   "You're looking for a shortcut, hack, or overnight success strategy",
